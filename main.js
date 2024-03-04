@@ -32,6 +32,8 @@ let monParagraphe = document.getElementById('mon_paragraphe');
 monParagraphe.textContent = "New Content";
 
 // exercice 2 :
+
+// Quetion 1 :
 let tab = ['Pomme', 'Banana', 'Prange'];
 let ol = document.createElement('ol');
 body.append(ol);
@@ -41,4 +43,24 @@ for(i = 0; i< tab.length; i++){
   li.textContent = tab[i];
   ol.append(li);
 }
+
+// Quetion 2 :
+let btn1 = document.createElement('button');
+btn1.textContent = "add element";
+btn1.addEventListener('click', ()=>{
+  let newElement = document.createElement('li');
+  newElement.textContent = "new element has been added to the list";
+  ol.append(newElement);
+})
+body.append(btn1);
+
+// Quetion 3 :
+let btn2 = document.createElement('button');
+btn2.textContent = "remove element";
+btn2.addEventListener('click', ()=>{
+  document.querySelector('ol').removeChild(document.querySelector('ol').lastChild);
+})
+body.append(btn2);
+
+
 
