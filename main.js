@@ -62,5 +62,10 @@ btn2.addEventListener('click', ()=>{
 })
 body.append(btn2);
 
+// Exercice 3 :
+let disabledElement = document.createElement('input');
+body.append(disabledElement)
+disabledElement.setAttribute('class', 'disabled');
+
 
 
