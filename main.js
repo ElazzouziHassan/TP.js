@@ -1,3 +1,5 @@
+let breakLine = document.createElement('br');
+
 // exercice 1 :
 const body = document.querySelector('body');
 let heading = document.createElement('h1')
@@ -61,6 +63,12 @@ btn2.addEventListener('click', ()=>{
   document.querySelector('ol').removeChild(document.querySelector('ol').lastChild);
 })
 body.append(btn2);
+btn2.style.padding = "10px"
+btn2.style.margin = "10px"
+btn1.style.padding = "10px"
+btn1.style.margin = "10px"
+
+body.append(breakLine);
 
 // Exercice 3 :
 let disabledElement = document.createElement('input');
