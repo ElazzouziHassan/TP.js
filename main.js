@@ -1,4 +1,19 @@
 let breakLine = document.createElement('br');
+let style = document.createElement('style');
+style.innerHTML = `
+  .class-a {
+    background-color: lightblue;
+    color: white;
+    padding: 10px;
+  }
+
+  .class-b {
+    background-color: lightgreen;
+    color: black;
+    padding: 10px;
+  }
+`;
+document.head.appendChild(style);
 
 // exercice 1 :
 const body = document.querySelector('body');
@@ -90,11 +105,25 @@ inverseDisabledField.style.padding = "10px"
 inverseDisabledField.style.cursor = 'pointer'
 body.append(inverseDisabledField)
 
-
 inverseDisabledField.addEventListener('click', ()=>{
   disabledElement.disabled = !disabledElement.disabled
 })
 
+// quetion 2 :
+let playClasses = document.createElement('h2');
+playClasses.textContent = "Cliquer pour Basculer entre deux classes différentes";
 
+playClasses.setAttribute('class','class-a')
+body.append(playClasses);
+
+playClasses.addEventListener('click', ()=>{
+  if(playClasses.classList.contains('class-a')){
+    playClasses.classList.remove('class-a');
+    playClasses.classList.add('class-b');
+  }else{
+    playClasses.classList.remove('class-b');
+    playClasses.classList.add('class-a');
+  }
+})
 
 
