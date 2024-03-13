@@ -79,8 +79,22 @@ body.append(breakLine);
 
 // Exercice 3 :
 let disabledElement = document.createElement('input');
-body.append(disabledElement)
-disabledElement.setAttribute('class', 'disabled');
+disabledElement.disabled = 'true';
+body.append(disabledElement);
+
+
+let inverseDisabledField = document.createElement('button');
+inverseDisabledField.textContent = "Inverser la valeur"
+inverseDisabledField.style.margin = "10px"
+inverseDisabledField.style.padding = "10px"
+inverseDisabledField.style.cursor = 'pointer'
+body.append(inverseDisabledField)
+
+
+inverseDisabledField.addEventListener('click', ()=>{
+  disabledElement.disabled = !disabledElement.disabled
+})
+
 
 
 
