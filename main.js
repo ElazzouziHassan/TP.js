@@ -173,7 +173,16 @@ exercice4.append(alertBtn);
 alertBtn.addEventListener('click', ()=>{
   alert("Message d'alerte !");
 });
+// quetion 2 :
+let inputToOutput = document.createElement('input');
+let spanOutput = document.createElement('span');
+spanOutput.textContent = "output"
+exercice4.append(inputToOutput);
+exercice4.append(spanOutput);
 
+inputToOutput.addEventListener('keyup', () => {
+  spanOutput.textContent = inputToOutput.value
+})
 
 
 
