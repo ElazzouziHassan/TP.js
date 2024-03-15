@@ -12,6 +12,12 @@ style.innerHTML = `
     color: black;
     padding: 10px;
   }
+  .exercice-4{
+    background-color: lightgray;
+  }
+  .exercice-4 h2{
+    color: red;
+  }
 `;
 document.head.appendChild(style);
 
@@ -138,6 +144,7 @@ afficheElement.textContent = "Aficher";
 body.append(elementDisplay);
 body.append(afficheElement);
 body.append(hideElement);
+body.append(breakLine);
 
 afficheElement.addEventListener('click', () =>{
   if ( elementDisplay.style.display === 'none' ){
@@ -150,6 +157,22 @@ hideElement.addEventListener('click', () =>{
   }else return true;
 })
 
+// Exercice 4:
+let exercice4 = document.createElement('div');
+exercice4.setAttribute('class', 'exercice-4');
+body.append(exercice4);
+
+let ex4title = document.createElement('h2');
+ex4title.textContent = "Exercice 4:";
+exercice4.append(ex4title);
+// question 1 :
+let alertBtn = document.createElement('button');
+alertBtn.textContent = "alert message";
+exercice4.append(alertBtn);
+
+alertBtn.addEventListener('click', ()=>{
+  alert("Message d'alerte !");
+});
 
 
 
