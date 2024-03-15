@@ -28,6 +28,14 @@ style.innerHTML = `
   .exercice-5 h2{
     color: red;
   }
+  .rating-stars{
+    display: flex; 
+    align-items:center;
+  }
+  .rating-stars img{
+    width:40px;
+    height:40px;
+  }
 `;
 document.head.appendChild(style);
 
@@ -213,4 +221,63 @@ body.append(exercice5);
 let ex5title = document.createElement('h2');
 ex5title.textContent = "Exercice 5:";
 exercice5.append(ex5title);
+// ------------------------------------------------
+let ratingStars = document.createElement('div');
+ratingStars.setAttribute('class', 'rating-stars');
+
+for (let i=1; i<=5; i++){
+
+  let ratingImg = document.createElement('img');
+  ratingImg.setAttribute('class', "star");
+  ratingImg.setAttribute('rating', `${i}`);
+  ratingImg.setAttribute('src', "https://th.bing.com/th/id/R.ab0c888ab1c28f88e90d0505c94591cb?rik=UxpkruyiaCmAWw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_271966.png&ehk=uJsDybbuSyCSeh0W44Bz7qpQh4u%2fTqmwYClo6kTbSxM%3d&risl=&pid=ImgRaw&r=0");
+  ratingStars.append(ratingImg);
+
+}
+
+exercice5.append(ratingStars);
+
+let spanRating = document.createElement('span');
+spanRating.textContent = "Rating : "
+exercice5.append(spanRating);
+
+let stars = document.querySelectorAll('.star');
+
+stars.forEach( s => {
+
+  s.addEventListener('click', () => {
+    let rating = parseInt(s.getAttribute('rating'));
+    updateRating(rating);
+  })
+
+  s.addEventListener('mouseover', () => {
+    let rating = parseInt(s.getAttribute('rating'));
+    highlightedStars(rating);
+  });
+
+  s.addEventListener('mouseout', () => {
+    let currentRating = parseInt(spanRating.textContent);
+    highlightedStars(currentRating);
+  });
+
+});
+
+function updateRating(rating) {
+  spanRating.textContent = "Rating : "+ rating;
+}
+
+function highlightedStars(rating) {
+  stars.forEach(s => {
+    const starRating = parseInt(s.getAttribute('rating'));
+    if (starRating <= rating) {
+      s.src = 'https://th.bing.com/th/id/R.984d22fce5cae2c01473f4abe8063fd1?rik=F90vUaHqj6xehA&pid=ImgRaw&r=0'; 
+    } else {
+      s.src = 'https://th.bing.com/th/id/R.ab0c888ab1c28f88e90d0505c94591cb?rik=UxpkruyiaCmAWw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_271966.png&ehk=uJsDybbuSyCSeh0W44Bz7qpQh4u%2fTqmwYClo6kTbSxM%3d&risl=&pid=ImgRaw&r=0';
+    }
+  });
+}
+
+
+
+
 
