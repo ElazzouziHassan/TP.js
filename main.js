@@ -126,4 +126,32 @@ playClasses.addEventListener('click', ()=>{
   }
 })
 
+// quetion 3:
+let elementDisplay = document.createElement('h2');
+let hideElement = document.createElement('button');
+let afficheElement = document.createElement('button');
+
+elementDisplay.textContent = "Hello, World!";
+hideElement.textContent = "Masquer";
+afficheElement.textContent = "Aficher";
+
+body.append(elementDisplay);
+body.append(afficheElement);
+body.append(hideElement);
+
+afficheElement.addEventListener('click', () =>{
+  if ( elementDisplay.style.display === 'none' ){
+    elementDisplay.style.display = 'block'
+  }else return true;
+})
+hideElement.addEventListener('click', () =>{
+  if ( elementDisplay.style.display !== 'none' ){
+    elementDisplay.style.display = 'none'
+  }else return true;
+})
+
+
+
+
+
 
