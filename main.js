@@ -308,6 +308,8 @@ for (let i = 0 ; i < category.length; i++){
 let list = document.createElement('ul');
 for (let i = 0; i < products.length; i++){
   let li = document.createElement('li');
+  li.setAttribute('class', 'product');
+  li.setAttribute('product', `${products[i]}`);
   li.textContent = products[i];
   list.append(li);
 }
