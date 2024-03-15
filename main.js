@@ -28,6 +28,14 @@ style.innerHTML = `
   .exercice-5 h2{
     color: red;
   }
+  .exercice-6{
+    background-color: lightgray;
+    padding:10px;
+    marging:10px;
+  }
+  .exercice-6 h2{
+    color: red;
+  }
   .rating-stars{
     display: flex; 
     align-items:center;
@@ -276,6 +284,35 @@ function highlightedStars(rating) {
     }
   });
 }
+
+// Exercice 6:
+let exercice6 = document.createElement('div');
+exercice6.setAttribute('class', 'exercice-6');
+body.append(exercice6);
+
+let ex6title = document.createElement('h2');
+ex6title.textContent = "Exercice 6:";
+exercice6.append(ex6title);
+// -----------------------------------------------
+let category = ["Fruits", "Legumes", "Viande"];
+let products = ["Boeuf", "Tomates", "Poulet", "Carottes"];
+
+for (let i = 0 ; i < category.length; i++){
+  let btn = document.createElement('button');
+  btn.setAttribute('class', 'category');
+  btn.setAttribute('category', `${category[i]}`);
+  btn.textContent = category[i];
+  exercice6.append(btn);
+}
+
+let list = document.createElement('ul');
+for (let i = 0; i < products.length; i++){
+  let li = document.createElement('li');
+  li.textContent = products[i];
+  list.append(li);
+}
+exercice6.append(list);
+
 
 
 
