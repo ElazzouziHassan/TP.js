@@ -184,6 +184,16 @@ inputToOutput.addEventListener('keyup', () => {
   spanOutput.textContent = inputToOutput.value
 })
 
+// quetion 3 :
+let myLink = document.createElement('a');
+myLink.setAttribute('href',"#");
+myLink.textContent = "Cliquez ici pour ne pas suivre le lien";
+exercice4.append(breakLine);
+exercice4.append(myLink);
+myLink.addEventListener('click', (ev)=>{
+  ev.preventDefault();
+  alert('Action par défaut du lien a été empêchée !');
+})
 
 
 
