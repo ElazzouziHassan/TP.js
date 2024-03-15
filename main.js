@@ -14,8 +14,18 @@ style.innerHTML = `
   }
   .exercice-4{
     background-color: lightgray;
+    padding:10px;
+    marging:10px;
+  }
+  .exercice-5{
+    background-color: lightgray;
+    padding:10px;
+    marging:10px;
   }
   .exercice-4 h2{
+    color: red;
+  }
+  .exercice-5 h2{
     color: red;
   }
 `;
@@ -195,5 +205,12 @@ myLink.addEventListener('click', (ev)=>{
   alert('Action par défaut du lien a été empêchée !');
 })
 
+// Exercice 5:
+let exercice5 = document.createElement('div');
+exercice5.setAttribute('class', 'exercice-5');
+body.append(exercice5);
 
+let ex5title = document.createElement('h2');
+ex5title.textContent = "Exercice 5:";
+exercice5.append(ex5title);
 
